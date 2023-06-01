@@ -106,6 +106,9 @@ function Mevsimler() {
    * [Görev 5A] Mevsimler , bir mevsimler nesnesi oluşturur
    */
 
+  this.mevsim = "ilkbahar";
+  //["yaz", "sonbahar", "kış", "ilkbahar"];
+
   // ✨ gerekli propları ekleyin
 
   /**
@@ -122,8 +125,30 @@ function Mevsimler() {
    */
   this.sonraki = () => {
     // ✨ kodlar buraya
+
+    if (this.mevsim == "ilkbahar") {
+      this.mevsim = "yaz";
+      return this.mevsim;
+    } else if (this.mevsim == "yaz") {
+      this.mevsim = "sonbahar";
+      return this.mevsim;
+    } else if (this.mevsim == "sonbahar") {
+      this.mevsim = "kış";
+      return this.mevsim;
+    } else if (this.mevsim == "kış") {
+      {
+        this.mevsim = "ilkbahar";
+        return this.mevsim;
+      }
+    }
   };
 }
+
+const mevsimler = new Mevsimler();
+console.log(mevsimler.sonraki());
+console.log(mevsimler.sonraki());
+console.log(mevsimler.sonraki());
+console.log(mevsimler.sonraki());
 
 function Araba(/*kodlar buraya */) {
   /**
