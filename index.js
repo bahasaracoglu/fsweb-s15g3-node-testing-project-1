@@ -216,7 +216,22 @@ function Araba(/*kodlar buraya */) {
  */
 function asenkronCiftSayi(sayi) {
   // ✨ implement
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(sayi % 2 === 0);
+    }, 1000); // 1 saniye gecikme eklendi
+  });
 }
+
+asenkronCiftSayi(2).then((result) => {
+  console.log(result); // true
+});
+
+asenkronCiftSayi(3).then((result) => {
+  console.log(result); // false
+});
+
+console.log("Görev-7", asenkronCiftSayi(3));
 
 module.exports = {
   nesneyiTrimle,
