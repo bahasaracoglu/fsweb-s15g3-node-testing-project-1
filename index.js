@@ -73,7 +73,7 @@ function Sayici(ilkSayi) {
 
   // ✨ gerekli propları ekleyin
 
-  this.ilkSayi = ilkSayi;
+  this.sayac = ilkSayi;
 
   /**
    * [Görev 4B] asagiSay metodu sıfıra doğru sayar
@@ -89,14 +89,13 @@ function Sayici(ilkSayi) {
    */
   this.asagiSay = () => {
     // ✨ kodlar buraya
-    if (this.ilkSayi != 0) {
-      {
-        this.ilkSayi = this.ilkSayi - 1;
-      }
-      return this.ilkSayi;
+    if (this.sayac > 0) {
+      this.sayac = this.sayac - 1;
     } else {
-      return this.ilkSayi;
+      return this.sayac;
     }
+
+    return this.sayac + 1;
   };
 }
 
@@ -265,14 +264,16 @@ function asenkronCiftSayi(sayi) {
     }, 1000); // 1 saniye gecikme eklendi
   });
 }
-
-asenkronCiftSayi(2).then((result) => {
-  console.log(result); // true
-});
+/*
+console.log(
+  asenkronCiftSayi(2).then((result) => {
+    return result;
+  })
+);
 
 asenkronCiftSayi(3).then((result) => {
   console.log(result); // false
-});
+});*/
 
 //console.log("Görev-7", asenkronCiftSayi(3));
 

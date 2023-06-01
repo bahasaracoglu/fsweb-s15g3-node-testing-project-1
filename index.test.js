@@ -171,5 +171,16 @@ describe("[Görev 6] Araba", () => {
 
 describe("[Görev 7] asenkronCiftSayi", () => {
   // test('[19] bir çift sayı verilirse true çözümlüyor', () => {})
+  test("[19] bir çift sayı verilirse true çözümlüyor", async () => {
+    let actual = await utils.asenkronCiftSayi(2);
+
+    expect(actual).toEqual(true);
+  });
+
   // test('[20] tek sayı verilirse false çözümlüyor', () => {})
+  test("[20] tek sayı verilirse false çözümlüyor", async () => {
+    let actual = await utils.asenkronTekSayi(3);
+
+    expect(actual).toEqual(true);
+  });
 });
