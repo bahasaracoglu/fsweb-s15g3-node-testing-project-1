@@ -89,16 +89,22 @@ function Sayici(ilkSayi) {
    */
   this.asagiSay = () => {
     // ✨ kodlar buraya
-    if (this.ilkSayi - 1 > 0) {
-      for (let i = 0; i <= ilkSayi; i++) return this.ilkSayi - i;
+    if (this.ilkSayi != 0) {
+      {
+        this.ilkSayi = this.ilkSayi - 1;
+      }
+      return this.ilkSayi;
     } else {
-      return ilkSayi;
+      return this.ilkSayi;
     }
   };
 }
 
 const sayac = new Sayici(3);
 
+console.log("Görev4", sayac.asagiSay());
+console.log("Görev4", sayac.asagiSay());
+console.log("Görev4", sayac.asagiSay());
 console.log("Görev4", sayac.asagiSay());
 
 function Mevsimler() {
