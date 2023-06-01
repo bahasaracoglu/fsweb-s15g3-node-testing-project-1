@@ -8,7 +8,16 @@
  */
 function nesneyiTrimle(obj) {
   // ✨ kodlar buraya
+
+  let newObj = {};
+
+  for (const prop in obj) {
+    newObj[prop] = obj[prop].trim();
+  }
+  return newObj;
 }
+
+console.log("Görev1", nesneyiTrimle({ isim: "  jane  " }));
 
 /**
  * [Görev 2] verileniTrimle propları string olan bir nesne alır ve gönderilen propu trimler.
@@ -20,7 +29,18 @@ function nesneyiTrimle(obj) {
  */
 function verileniTrimle(obj, prop) {
   // ✨ kodlar buraya
+
+  let newObj = { ...obj };
+
+  newObj[prop] = newObj[prop].trim();
+
+  return newObj;
 }
+
+console.log(
+  "Görev2",
+  verileniTrimle({ isim: "  jane  ", yas: " 34 " }, "isim")
+);
 
 /**
  * [Görev 3] enBuyukTamsayiyiBul bir dizi nesne içinde bulunan tamsayılardan en büyük olanı bulur { tamsayi: 1 }
@@ -39,9 +59,8 @@ function Sayici(ilkSayi) {
    * [Görev 4A] Sayici bir sayaç oluşturur
    * @param {number} ilkSayi - Sayacin ilk değeri
    */
-  
+
   // ✨ gerekli propları ekleyin
-  
 
   /**
    * [Görev 4B] asagiSay metodu sıfıra doğru sayar
@@ -57,7 +76,7 @@ function Sayici(ilkSayi) {
    */
   this.asagiSay = () => {
     // ✨ kodlar buraya
-  }
+  };
 }
 
 function Mevsimler() {
@@ -81,7 +100,7 @@ function Mevsimler() {
    */
   this.sonraki = () => {
     // ✨ kodlar buraya
-  }
+  };
 }
 
 function Araba(/*kodlar buraya */) {
@@ -91,12 +110,10 @@ function Araba(/*kodlar buraya */) {
    * @param {number} depo - benzin deposu kapasitesi
    * @param {number} kml - arabanın litre başına kat edebileceği km yol
    */
- 
-    this.odometer = 0 // araba 0 kilometrede yüklenecek
-    this.depo = depoBenzin // araba full depoyla yüklenecek
-    // ✨ gerekli propları ekleyin
 
-  
+  this.odometer = 0; // araba 0 kilometrede yüklenecek
+  this.depo = depoBenzin; // araba full depoyla yüklenecek
+  // ✨ gerekli propları ekleyin
 
   /**
    * [Görev 6B] sur metodu odometera km ekler ve aynı oranda depodan benzin tüketir
@@ -113,7 +130,7 @@ function Araba(/*kodlar buraya */) {
    */
   this.sur = (gidilecekyol) => {
     // ✨ kodlar buraya
-  }
+  };
 
   /**
    * [Görev 6C] Depoya benzin ekleme
@@ -128,7 +145,7 @@ function Araba(/*kodlar buraya */) {
    */
   this.benzinal = (litre) => {
     // ✨ kodlar buraya
-  }
+  };
 }
 
 /**
@@ -156,4 +173,4 @@ module.exports = {
   Sayici,
   Mevsimler,
   Araba,
-}
+};
