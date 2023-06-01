@@ -233,13 +233,13 @@ function Araba(/*kodlar buraya */ isim, depo, kml) {
 }
 
 const focus = new Araba("focus", 20, 30);
-/*
+
 console.log(focus.sur(100));
 console.log(focus.sur(100));
 console.log(focus.sur(100));
 console.log(focus.sur(200));
 console.log(focus.sur(200));
-console.log(focus.sur(200));*/
+console.log(focus.sur(200));
 console.log(focus.sur(600));
 console.log(focus.sur(1));
 console.log(focus.benzinal(99));
