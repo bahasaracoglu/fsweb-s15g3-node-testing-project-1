@@ -258,10 +258,8 @@ console.log(focus.benzinal(99));
  */
 function asenkronCiftSayi(sayi) {
   // ✨ implement
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(sayi % 2 === 0);
-    }, 1000); // 1 saniye gecikme eklendi
+  return new Promise((res) => {
+    res(sayi % 2 == 0);
   });
 }
 /*

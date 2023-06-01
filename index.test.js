@@ -179,8 +179,8 @@ describe("[Görev 7] asenkronCiftSayi", () => {
 
   // test('[20] tek sayı verilirse false çözümlüyor', () => {})
   test("[20] tek sayı verilirse false çözümlüyor", async () => {
-    let actual = await utils.asenkronTekSayi(3);
+    let actual = await utils.asenkronCiftSayi(3);
 
-    expect(actual).toEqual(true);
+    expect(actual).toEqual(false);
   });
 });
