@@ -156,7 +156,7 @@ console.log(mevsimler.sonraki());
 console.log(mevsimler.sonraki());
 console.log(mevsimler.sonraki());
 
-function Araba(/*kodlar buraya */) {
+function Araba(/*kodlar buraya */ isim, depo, kml) {
   /**
    * [Görev 6A] Araba 3 argüman alarak bir araba nesnesi oluşturur
    * @param {string} isim - arabanın ismi
@@ -165,8 +165,12 @@ function Araba(/*kodlar buraya */) {
    */
 
   this.odometer = 0; // araba 0 kilometrede yüklenecek
+  let depoBenzin = depo;
   this.depo = depoBenzin; // araba full depoyla yüklenecek
   // ✨ gerekli propları ekleyin
+
+  this.isim = isim;
+  this.kml = kml;
 
   /**
    * [Görev 6B] sur metodu odometera km ekler ve aynı oranda depodan benzin tüketir
@@ -183,6 +187,24 @@ function Araba(/*kodlar buraya */) {
    */
   this.sur = (gidilecekyol) => {
     // ✨ kodlar buraya
+    let kalanMenzil = this.depo * this.kml;
+    let kalanMenzilleGY = 0;
+    if (this.depo > 0) {
+      if (gidilecekyol > kalanMenzil) {
+        kalanMenzilleGY = kalanMenzil;
+        this.odometer = this.odometer + kalanMenzilleGY;
+        this.depo = this.depo - kalanMenzilleGY / kml;
+        return this.odometer;
+      } else {
+        this.odometer = this.odometer + gidilecekyol;
+        this.depo = this.depo - gidilecekyol / kml;
+
+        return this.odometer;
+      }
+    } else {
+      console.log("benzin bitti");
+    }
+    return this.odometer;
   };
 
   /**
@@ -198,8 +220,29 @@ function Araba(/*kodlar buraya */) {
    */
   this.benzinal = (litre) => {
     // ✨ kodlar buraya
+    let kalanMenzil = this.depo * this.kml;
+    if (this.depo + litre <= depoBenzin) {
+      this.depo = this.depo + litre;
+      return kalanMenzil;
+    } else {
+      this.depo = depoBenzin;
+      kalanMenzil = this.depo * this.kml;
+      return kalanMenzil;
+    }
   };
 }
+
+const focus = new Araba("focus", 20, 30);
+/*
+console.log(focus.sur(100));
+console.log(focus.sur(100));
+console.log(focus.sur(100));
+console.log(focus.sur(200));
+console.log(focus.sur(200));
+console.log(focus.sur(200));*/
+console.log(focus.sur(600));
+console.log(focus.sur(1));
+console.log(focus.benzinal(99));
 
 /**
  * [Görev 7] Bir sayının çift olup olmadığını asenkron olarak çözümler
@@ -231,7 +274,7 @@ asenkronCiftSayi(3).then((result) => {
   console.log(result); // false
 });
 
-console.log("Görev-7", asenkronCiftSayi(3));
+//console.log("Görev-7", asenkronCiftSayi(3));
 
 module.exports = {
   nesneyiTrimle,
