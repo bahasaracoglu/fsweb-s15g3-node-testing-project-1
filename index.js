@@ -52,7 +52,18 @@ console.log(
  */
 function enBuyukTamsayiyiBul(tamsayilar) {
   // ✨ kodlar buraya
+  const sayiDegerleri = tamsayilar.map((sayi) => sayi.tamsayi);
+  const enBuyukTamsayi = sayiDegerleri.reduce((prev, current) => {
+    return current > prev ? current : prev;
+  });
+
+  return enBuyukTamsayi;
 }
+
+console.log(
+  "Görev3",
+  enBuyukTamsayiyiBul([{ tamsayi: 1 }, { tamsayi: 3 }, { tamsayi: 2 }])
+);
 
 function Sayici(ilkSayi) {
   /**
@@ -61,6 +72,8 @@ function Sayici(ilkSayi) {
    */
 
   // ✨ gerekli propları ekleyin
+
+  this.ilkSayi = ilkSayi;
 
   /**
    * [Görev 4B] asagiSay metodu sıfıra doğru sayar
@@ -76,8 +89,17 @@ function Sayici(ilkSayi) {
    */
   this.asagiSay = () => {
     // ✨ kodlar buraya
+    if (this.ilkSayi - 1 > 0) {
+      for (let i = 0; i <= ilkSayi; i++) return this.ilkSayi - i;
+    } else {
+      return ilkSayi;
+    }
   };
 }
+
+const sayac = new Sayici(3);
+
+console.log("Görev4", sayac.asagiSay());
 
 function Mevsimler() {
   /**
